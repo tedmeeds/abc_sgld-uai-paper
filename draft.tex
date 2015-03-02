@@ -351,11 +351,32 @@ Our updates for $\omegav$ are simple.  At each time step $t$, each seed is refre
 \begin{figure}[t]
 \vskip 0.2in
 \begin{center}
-\includegraphics[width=0.45\columnwidth]{./images/exp-ABC-MCMC-posterior_hist.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior_hist.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
-\caption{\small{}}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-ABC-MCMC-posterior_hist.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior_hist.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
+\caption{\small{Using sticky numbers at rate $1\%$}}
+\label{fig:exp-posteriors}
+\end{center}
+\vskip -0.2in
+\end{figure} 
+
+\begin{figure}[t]
+\vskip 0.2in
+\begin{center}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SG-HMC-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-ABC-MCMC-posterior_hist.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior_hist.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
+\caption{\small{No sticky numbers}}
 \label{fig:exp-posteriors}
 \end{center}
 \vskip -0.2in
@@ -371,15 +392,31 @@ We use a simple $D=1$ problem to demonstrate HABC.  Let $y= \frac{1}{N} \sum_{i}
 \setlength{\linewidth}{\textwidth}
 \setlength{\hsize}{\textwidth}
 \begin{center}
-\includegraphics[width=0.95\columnwidth]{./images/exp-ABC-MCMC-theta-timeseries.pdf}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries.pdf}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Langevin-theta-timeseries.pdf}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries.pdf}
-\caption{\small{}}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-HMC-theta-timeseries-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf}
+\caption{\small{Using sticky numbers at rate $1\%$}}
 \label{fig:exp-theta-traces}
 \end{center}
 \vskip -0.2in
 \end{figure*} 
+
+\begin{figure*}[t]
+%\vskip 0.2in
+\setlength{\linewidth}{\textwidth}
+\setlength{\hsize}{\textwidth}
+\begin{center}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf}
+\caption{\small{No sticky numbers}}
+\label{fig:exp-theta-traces}
+\end{center}
+\vskip -0.2in
+\end{figure*} 
+
 
 
 \subsection{Bias and Variance of $\nabla \hat{U}(\thetav)$}
@@ -391,6 +428,94 @@ At $\theta_{\text{MAP}}$ we estimated the gradient $\nabla \hat{U}(\theta)$ usin
 
 \subsection{Posterior Inference using HABC}
 In Figures~\ref{fig:exp-theta-traces} we show the posterior trace plots for ABC-MCMC, SGLD, SGHMC, and SGNHT versions of HABC using SL gradient estimates ($S=5$).  The behavior of the trajectories is quite different, though they all produce the same correct posterior estimates (Figure~\ref{fig:exp-posteriors}).  In Table~\ref{tab:exp-posteriors-nosticky} we report the {\em total variational distance} between the true posterior and the ABC posteriors after different numbers of samples (repeated 5 times).
+
+\begin{table}[h]
+\caption{Posterior inference for Exponential problem}
+\label{tab:exp-prob-no-sticky}
+\begin{center}
+\begin{tabular}{l||c|c|c|c|c}
+{\bf Algo}  & 100 & 1000 & 10K & 50K \\
+\hline \\
+SL-MCMC &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+SGLD    &  $0.42$ & $0.22$ & $0.14$ & $0.045$ \\
+SGHMC   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+SGNHT   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\caption{Posterior inference for Exponential problem}
+\label{tab:exp-prob-no-sticky}
+\begin{center}
+\begin{tabular}{l||c|c|c|c|c}
+{\bf Algo}  & 100 & 1000 & 10K & 50K \\
+\hline \\
+SL-MCMC &  $0.23$ & $0.12$ & $0.053$ & $0.044$ \\
+SGLD    &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+SGHMC   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+SGNHT   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+\end{tabular}
+\end{center}
+\end{table}
+
+% DIR: exp-eta-0p005-dtheta-0p01-C10-S5-omega-0p01
+% SL-MCMC omega_rate 100%
+% 
+% times 10,   100,  1000,  5000, 10000, 20000, 30000, 40000, 50000
+% mean 0.6052864 ,  0.26126289,  0.09895101,  0.05295502,  0.04721529,0.04513989,  0.04622511,  0.04491134,  0.04539522
+% std 0.09348374,  0.046628  ,  0.01530586,  0.00861296,  0.00604954, 0.00239858,  0.00327312,  0.00303499,  0.00242383
+% 
+% omega_Rate 1%
+% mean 0.63282705,  0.23141512,  0.11508726,  0.07034678,  0.05338616, 0.05246243,  0.0538948 ,  0.0507813 ,  0.04435618
+% std 0.11183616,  0.05139663,  0.05390608,  0.03376141,  0.01785321, 0.0125916 ,  0.00662542,  0.01255384,  0.00603819
+
+% SGLD omega_rate 100%
+% array([ 0.66893503,  0.41631787,  0.22451057,  0.15184296,  0.14112572, 0.15204372,  0.14857288,  0.15116372,  0.15076312])
+% std(0)array([ 0.08087815,  0.11567097,  0.04555416,  0.03197215,  0.01855117, 0.01417793,  0.01341749,  0.01312386,  0.00855595])
+% SGLD omega_rate 1%
+% mean 0.75547928,  0.35519016,  0.17736532,  0.09150572,  0.06159863,0.0553024 ,  0.06191501,  0.05637656,  0.05472899
+% std 0.11641948,  0.09003194,  0.08414296,  0.03832745,  0.01937652, 0.02211211,  0.01263801,  0.00796597,  0.00836038
+% SGHMC omega 100%
+% array([ 0.59033585,  0.25581098,  0.24731947,  0.22616621,  0.22842994,
+%         0.22780039,  0.22743227,  0.2256994 ,  0.22623605])
+%
+% In [25]: tvd.std(0)
+% Out[25]:
+% array([ 0.1870709 ,  0.05443133,  0.04280439,  0.01782881,  0.01695731,
+%         0.01044903,  0.00970157,  0.0081758 ,  0.00759141])
+% omega 1%
+% array([ 0.51193673,  0.36801527,  0.16197407,  0.09853979,  0.0929902 ,
+%         0.0976414 ,  0.09743771,  0.09113688,  0.08687801])
+%
+% In [28]: tvd.std(0)
+% Out[28]:
+% array([ 0.17030828,  0.10124135,  0.0653025 ,  0.0180961 ,  0.01414473,
+%         0.01492984,  0.0169915 ,  0.01351012,  0.009596  ])
+% 
+% SGTHEMO
+% omega 100%
+% In [33]: tvd.mean(0)
+% Out[33]:
+% array([ 0.61253343,  0.2419202 ,  0.15161436,  0.16610309,  0.18284641,
+%         0.18875997,  0.19055003,  0.1928232 ,  0.19340706])
+%
+% In [34]: tvd.std(0)
+% Out[34]:
+% array([ 0.17654396,  0.04334123,  0.04052037,  0.01846459,  0.0212887 ,
+%         0.009026  ,  0.00640309,  0.00575303,  0.00415439])
+%
+
+% omega 1%
+% In [30]: tvd.std(0)
+% Out[30]:
+% array([ 0.17343684,  0.10098802,  0.06547166,  0.02232569,  0.01339252,
+%         0.01902682,  0.0181153 ,  0.01225494,  0.00760486])
+%
+% In [31]: tvd.mean(0)
+% Out[31]:
+% array([ 0.47453793,  0.33112199,  0.14890592,  0.07600464,  0.06685565,
+%         0.06371391,  0.06363715,  0.05882387,  0.05590603])
 
 
 
