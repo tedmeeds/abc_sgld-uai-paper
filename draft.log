@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 MAR 2015 16:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 MAR 2015 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -172,14 +172,7 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip49
 \algorithmicindent=\skip50
 )
-(./cdefs.tex) (./draft.aux
-
-LaTeX Warning: Label `fig:exp-theta-traces' multiply defined.
-
-
-LaTeX Warning: Label `fig:exp-posteriors' multiply defined.
-
-)
+(./cdefs.tex) (./draft.aux)
 \openout1 = `draft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
@@ -195,7 +188,8 @@ LaTeX Font Info:    ... okay on input line 92.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
 LaTeX Font Info:    ... okay on input line 92.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 92.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -304,207 +298,223 @@ Overfull \hbox (8.33315pt too wide) detected at line 298
 /it/10 ^^R\OML/cmm/m/it/10 ; ![]\OT1/cmr/m/n/10 ))[]
  []
 
-<./images/exp_varg_figure.pdf, id=31, 763.91501pt x 558.40492pt>
+(./algo_fdsa_abc.tex) (./algo_spsa_abc.tex)
+<./images/exp_crn_figure.pdf, id=31, 732.31607pt x 552.05785pt>
+File: ./images/exp_crn_figure.pdf Graphic file (type pdf)
+
+<use ./images/exp_crn_figure.pdf>
+Package pdftex.def Info: ./images/exp_crn_figure.pdf used on input line 329.
+(pdftex.def)             Requested size: 223.1329pt x 168.2047pt.
+
+<./images/exp_varg_figure.pdf, id=32, 763.91501pt x 558.40492pt>
 File: ./images/exp_varg_figure.pdf Graphic file (type pdf)
 
 <use ./images/exp_varg_figure.pdf>
-Package pdftex.def Info: ./images/exp_varg_figure.pdf used on input line 307.
+Package pdftex.def Info: ./images/exp_varg_figure.pdf used on input line 339.
 (pdftex.def)             Requested size: 223.1329pt x 163.10059pt.
- (./algo_fdsa_abc.tex) (./algo_spsa_abc.tex)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 Overfull \vbox (6.81989pt too high) has occurred while \output is active []
 
 
-[5 <./images/exp_varg_figure.pdf>]
-<./images/exp_crn_figure.pdf, id=66, 732.31607pt x 552.05785pt>
-File: ./images/exp_crn_figure.pdf Graphic file (type pdf)
-
-<use ./images/exp_crn_figure.pdf>
-Package pdftex.def Info: ./images/exp_crn_figure.pdf used on input line 337.
-(pdftex.def)             Requested size: 223.1329pt x 168.2047pt.
-
-<./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf, id=67, 413.135
-54pt x 415.11925pt>
-File: ./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf Graphic fi
-le (type pdf)
-
-<use ./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-ch
-ain0.pdf used on input line 354.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
-
-<./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf, id=68, 413.1355
-4pt x 415.11925pt>
-File: ./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf Graphic fil
-e (type pdf)
-
-<use ./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-cha
-in0.pdf used on input line 355.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
-
-<./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf, id=69, 413
-.13554pt x 415.11925pt>
-File: ./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf Graphi
-c file (type pdf)
-
-<use ./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-Langevin-posterior-hist-omega-rate-0p0
-1-chain0.pdf used on input line 356.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
-
-<./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf, id=70, 
-413.13554pt x 415.11925pt>
-File: ./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf Gra
-phic file (type pdf)
-
-<use ./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-Thermostats-posterior-hist-omega-rate-
-0p01-chain0.pdf used on input line 357.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
-
-<./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf, id=71, 413.13
+[5]
+<./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf, id=36, 413.13
 554pt x 415.11925pt>
 File: ./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf Graphic f
 ile (type pdf)
 
 <use ./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf>
 Package pdftex.def Info: ./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-c
-hain0.pdf used on input line 371.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
+hain0.pdf used on input line 355.
+(pdftex.def)             Requested size: 75.1625pt x 75.52267pt.
 
-<./images/exp-SG-HMC-posterior-hist-omega-rate-100p0-chain0.pdf, id=72, 413.135
-54pt x 415.11925pt>
-File: ./images/exp-SG-HMC-posterior-hist-omega-rate-100p0-chain0.pdf Graphic fi
-le (type pdf)
-
-<use ./images/exp-SG-HMC-posterior-hist-omega-rate-100p0-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-HMC-posterior-hist-omega-rate-100p0-ch
-ain0.pdf used on input line 372.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
-
-<./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf, id=73, 41
+<./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf, id=37, 41
 3.13554pt x 415.11925pt>
 File: ./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf Graph
 ic file (type pdf)
 
 <use ./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf>
 Package pdftex.def Info: ./images/exp-SG-Langevin-posterior-hist-omega-rate-100
-p0-chain0.pdf used on input line 373.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
+p0-chain0.pdf used on input line 357.
+(pdftex.def)             Requested size: 75.1625pt x 75.52267pt.
 
-<./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf, id=74,
+<./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf, id=38,
  413.13554pt x 415.11925pt>
 File: ./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf Gr
 aphic file (type pdf)
 
 <use ./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf>
 Package pdftex.def Info: ./images/exp-SG-Thermostats-posterior-hist-omega-rate-
-100p0-chain0.pdf used on input line 374.
-(pdftex.def)             Requested size: 105.69415pt x 106.19922pt.
+100p0-chain0.pdf used on input line 358.
+(pdftex.def)             Requested size: 75.1625pt x 75.52267pt.
 
-<./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf, id=75, 968.6
-2947pt x 415.11925pt>
-File: ./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf Graphic 
-file (type pdf)
+<./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf, id=39, 413.135
+54pt x 415.11925pt>
+File: ./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf Graphic fi
+le (type pdf)
 
-<use ./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-
-chain0.pdf used on input line 395.
-(pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
+<use ./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf>
+Package pdftex.def Info: ./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-ch
+ain0.pdf used on input line 360.
+(pdftex.def)             Requested size: 75.1625pt x 75.52267pt.
 
-<./images/exp-SG-HMC-theta-timeseries-omega-rate-0p01-chain0.pdf, id=76, 968.62
-947pt x 415.11925pt>
-File: ./images/exp-SG-HMC-theta-timeseries-omega-rate-0p01-chain0.pdf Graphic f
-ile (type pdf)
+<./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf, id=40, 413
+.13554pt x 415.11925pt>
+File: ./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf Graphi
+c file (type pdf)
 
-<use ./images/exp-SG-HMC-theta-timeseries-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-HMC-theta-timeseries-omega-rate-0p01-c
-hain0.pdf used on input line 396.
-(pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
+<use ./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf>
+Package pdftex.def Info: ./images/exp-SG-Langevin-posterior-hist-omega-rate-0p0
+1-chain0.pdf used on input line 362.
+(pdftex.def)             Requested size: 75.1625pt x 75.52267pt.
 
-<./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf, id=77, 9
-68.62947pt x 415.11925pt>
-File: ./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf Grap
-hic file (type pdf)
+<./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf, id=41, 
+413.13554pt x 415.11925pt>
+File: ./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf Gra
+phic file (type pdf)
 
-<use ./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-Langevin-theta-timeseries-omega-rate-0
-p01-chain0.pdf used on input line 397.
-(pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
+<use ./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf>
+Package pdftex.def Info: ./images/exp-SG-Thermostats-posterior-hist-omega-rate-
+0p01-chain0.pdf used on input line 363.
+(pdftex.def)             Requested size: 75.1625pt x 75.52267pt.
 
-<./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf, id=78
-, 968.62947pt x 415.11925pt>
-File: ./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf G
-raphic file (type pdf)
-
-<use ./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-Thermostats-theta-timeseries-omega-rat
-e-0p01-chain0.pdf used on input line 398.
-(pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
-
-<./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf, id=79, 968.
+<./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf, id=42, 968.
 62947pt x 415.11925pt>
 File: ./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf Graphic
  file (type pdf)
 
 <use ./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf>
 Package pdftex.def Info: ./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0
--chain0.pdf used on input line 410.
+-chain0.pdf used on input line 404.
 (pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
 
-<./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-chain0.pdf, id=80, 968.6
+<./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf, id=43, 968.6
 2947pt x 415.11925pt>
-File: ./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-chain0.pdf Graphic 
+File: ./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf Graphic 
 file (type pdf)
 
-<use ./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-chain0.pdf>
-Package pdftex.def Info: ./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-
-chain0.pdf used on input line 411.
+<use ./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf>
+Package pdftex.def Info: ./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-
+chain0.pdf used on input line 405.
 (pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
 
-<./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf, id=81, 
+<./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf, id=44, 
 968.62947pt x 415.11925pt>
 File: ./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf Gra
 phic file (type pdf)
 
 <use ./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf>
 Package pdftex.def Info: ./images/exp-SG-Langevin-theta-timeseries-omega-rate-1
-00p0-chain0.pdf used on input line 412.
+00p0-chain0.pdf used on input line 407.
 (pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
 
-<./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf, id=8
-2, 968.62947pt x 415.11925pt>
+<./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf, id=45, 9
+68.62947pt x 415.11925pt>
+File: ./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf Grap
+hic file (type pdf)
+
+<use ./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf>
+Package pdftex.def Info: ./images/exp-SG-Langevin-theta-timeseries-omega-rate-0
+p01-chain0.pdf used on input line 408.
+(pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
+
+<./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf, id=4
+6, 968.62947pt x 415.11925pt>
 File: ./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf 
 Graphic file (type pdf)
 
 <use ./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf>
 Package pdftex.def Info: ./images/exp-SG-Thermostats-theta-timeseries-omega-rat
-e-100p0-chain0.pdf used on input line 413.
+e-100p0-chain0.pdf used on input line 409.
 (pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
 
-Underfull \hbox (badness 1112) in paragraph at lines 423--425
+<./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf, id=47
+, 968.62947pt x 415.11925pt>
+File: ./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf G
+raphic file (type pdf)
+
+<use ./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf>
+Package pdftex.def Info: ./images/exp-SG-Thermostats-theta-timeseries-omega-rat
+e-0p01-chain0.pdf used on input line 410.
+(pdftex.def)             Requested size: 223.1329pt x 95.6211pt.
+
+Underfull \hbox (badness 1112) in paragraph at lines 437--439
 \OT1/ptm/m/n/10 dif-fer-ences for both the kernel-$\OML/cmm/m/it/10 epsilon$ \O
 T1/ptm/m/n/10 and synthetic-
  []
 
 
+LaTeX Warning: Reference `tab:exp-posteriors-nosticky' on page 6 undefined on i
+nput line 444.
+
+
 Overfull \vbox (6.81989pt too high) has occurred while \output is active []
 
 
-[6 <./images/exp_crn_figure.pdf> <./images/exp-SL-MCMC-posterior-hist-omega-rat
-e-0p01-chain0.pdf
+[6 <./images/exp_crn_figure.pdf> <./images/exp_varg_figure.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp_varg_figure.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `exp-traces-x-sticky' on page 7 undefined on input lin
+e 553.
+
+
+LaTeX Warning: Reference `tab:exp-tvd-sticky' on page 7 undefined on input line
+ 553.
+
+
+Overfull \vbox (6.68pt too high) has occurred while \output is active []
+
+ [7 <./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf> <./imag
+es/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SL-MCMC-theta-timeseries-omega-rate
+-0p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+> <./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SG-Langevin-theta-timeseries-omega-
+rate-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included i
+n a single page
+> <./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SG-Langevin-theta-timeseries-omega-
+rate-0p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included in
+ a single page
+> <./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SG-Thermostats-theta-timeseries-ome
+ga-rate-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SG-Thermostats-theta-timeseries-ome
+ga-rate-0p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included
+ in a single page
+> <./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SL-MCMC-posterior-hist-omega-rate-1
+00p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a si
+ngle page
+> <./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SG-Langevin-posterior-hist-omega-ra
+te-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included in 
+a single page
+> <./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf
+
+pdfTeX warning: pdflatex (file ./images/exp-SG-Thermostats-posterior-hist-omega
+-rate-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included 
+in a single page
+> <./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf
 
 pdfTeX warning: pdflatex (file ./images/exp-SL-MCMC-posterior-hist-omega-rate-0
 p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a sin
 gle page
-> <./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-HMC-posterior-hist-omega-rate-0p
-01-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a sing
-le page
 > <./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf
 
 pdfTeX warning: pdflatex (file ./images/exp-SG-Langevin-posterior-hist-omega-ra
@@ -516,73 +526,12 @@ pdfTeX warning: pdflatex (file ./images/exp-SG-Thermostats-posterior-hist-omega
 -rate-0p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included i
 n a single page
 >]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Warning: Reference `tab:exp-posteriors-nosticky' on page 7 undefined on i
-nput line 430.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `exp-traces-x-sticky' on page 7 undefined on input lin
-e 539.
-
-
-LaTeX Warning: Reference `tab:exp-tvd-sticky' on page 7 undefined on input line
- 539.
-
-
-Overfull \vbox (6.68pt too high) has occurred while \output is active []
-
- [7 <./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf> <./image
-s/exp-SG-HMC-theta-timeseries-omega-rate-0p01-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-HMC-theta-timeseries-omega-rate-
-0p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a si
-ngle page
-> <./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-Langevin-theta-timeseries-omega-
-rate-0p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included in
- a single page
-> <./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-Thermostats-theta-timeseries-ome
-ga-rate-0p01-chain0.pdf): PDF inclusion: multiple pdfs with page group included
- in a single page
-> <./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SL-MCMC-theta-timeseries-omega-rate
--100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a 
-single page
-> <./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-HMC-theta-timeseries-omega-rate-
-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a s
-ingle page
-> <./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-Langevin-theta-timeseries-omega-
-rate-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
-> <./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-Thermostats-theta-timeseries-ome
-ga-rate-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group include
-d in a single page
->]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 1072) in paragraph at lines 559--560
+Underfull \hbox (badness 1072) in paragraph at lines 573--574
 []\OT1/ptm/m/n/10 We com-pare dif-fer-ence HABC al-go-rithms with ABC-
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 559--560
+Underfull \hbox (badness 2717) in paragraph at lines 573--574
 \OML/cmm/b/it/10 ^^O \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/
 cmm/m/it/10 =\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it
 /10 =\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =\OT
@@ -597,56 +546,34 @@ r/m/n/10 3\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
 
 
 LaTeX Warning: Reference `fig:bf-posterior-histograms' on page 8 undefined on i
-nput line 561.
+nput line 575.
 
 
-LaTeX Warning: Reference `' on page 8 undefined on input line 561.
+LaTeX Warning: Reference `' on page 8 undefined on input line 575.
 
 
-LaTeX Warning: Reference `' on page 8 undefined on input line 561.
+LaTeX Warning: Reference `' on page 8 undefined on input line 575.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 589.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 603.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 589.
-
-Overfull \vbox (6.81989pt too high) has occurred while \output is active []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 603.
 
 
-[8 <./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf> <./images/
-exp-SG-HMC-posterior-hist-omega-rate-100p0-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-HMC-posterior-hist-omega-rate-10
-0p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included in a sin
-gle page
-> <./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-Langevin-posterior-hist-omega-ra
-te-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included in 
-a single page
-> <./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf
-
-pdfTeX warning: pdflatex (file ./images/exp-SG-Thermostats-posterior-hist-omega
--rate-100p0-chain0.pdf): PDF inclusion: multiple pdfs with page group included 
-in a single page
->]
-
-Package natbib Warning: Citation `michael' on page 9 undefined on input line 59
-5.
+Package natbib Warning: Citation `michael' on page 8 undefined on input line 60
+9.
 
 
-LaTeX Warning: Reference `future' on page 9 undefined on input line 595.
+LaTeX Warning: Reference `future' on page 8 undefined on input line 609.
 
 
 Overfull \vbox (6.81989pt too high) has occurred while \output is active []
 
 
-[9
-
-] (./draft.bbl
+[8] (./draft.bbl
 Underfull \hbox (badness 1019) in paragraph at lines 35--38
 []\OT1/ptm/m/n/10 Duane, Si-mon, Kennedy, An-thony D, Pendle-ton,
  []
@@ -680,21 +607,21 @@ Package natbib Warning: There were undefined citations.
 Overfull \vbox (6.81989pt too high) has occurred while \output is active []
 
 
-[10
+[9
 
 ] (./draft.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3268 strings out of 493488
- 47249 string characters out of 3141326
- 112763 words of memory out of 3000000
- 6481 multiletter control sequences out of 15000+200000
+ 3248 strings out of 493488
+ 45959 string characters out of 3141326
+ 116724 words of memory out of 3000000
+ 6465 multiletter control sequences out of 15000+200000
  25924 words of font info for 59 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,9n,28p,1295b,529s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -726,10 +653,10 @@ type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on draft.pdf (10 pages, 690318 bytes).
+Output written on draft.pdf (9 pages, 637168 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 367 compressed objects within 4 object streams
+ 370 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -301,15 +301,7 @@ the gradients (for a 1-dim problem) use $\eps$ as a smoothness prior in $\partia
   -\frac{1}{2}\log\lp\frac{\sigma_{\theta^+}^2 + \eps^2}{\sigma_{\theta^-}^2 + \eps^2}\rp -\frac{( \y - \mu_{\thetav^+} )^2 }{2 (\sigma^2_{\thetav^+} + \eps^2 )} +\frac{( \y - \mu_{\thetav^-} )^2 }{2 (\sigma^2_{\thetav^-} + \eps^2 )} 
 \end{equation} 
 
-\begin{figure}[t]
-\vskip 0.2in
-\begin{center}
-\includegraphics[width=0.95\columnwidth]{./images/exp_varg_figure.pdf}
-\caption{\small{Variance of gradient estimation using kernel-$\eps$ and SL for different values of $S\in\{5,50\}$ and fixed $\eps = 0.37$ (the same used in the other results).  For kernel-$\eps$, $\varv(\thetav_{\text{MAP}}) = 6.7 \pm 131.5$ and $\varv(\thetav_{\text{MAP}}) = 6.9 \pm 18.9$ (for $S=5$ and $S=50$, respectively).  For SL,$\varv(\thetav_{\text{MAP}}) = 6.35 \pm 42.4$ and $\varv(\thetav_{\text{MAP}}) = 0.62 \pm 5.2$ (for $S=5$ and $S=50$, respectively).  The ``true'' ABC gradient at $\thetav_{\text{MAP}}$ is $0.26$.  The ``true'' ABC loglikelihood is based on a Gaussian approximation (smoothed by $\eps$), with mean and variance set by moment matching with the true Gamma distribution (the sum of $N$ exponentials). Not only does kernel-$\eps$ keep a high variance for even large $S$, it seems to have a bias in its gradient estimate.  [look into this?] }}
-\label{fig:exp-varg}
-\end{center}
-\vskip -0.2in
-\end{figure}
+
 
 \subsection{From Finite Differences to Simultaneous Perturbations}
 \input{algo_fdsa_abc}
@@ -341,37 +333,35 @@ Variations of SPSA include {\em one-sided} SPSA \cite{spall2000adaptive} (we use
 \vskip -0.2in
 \end{figure} 
 
+\begin{figure}[t]
+\vskip 0.2in
+\begin{center}
+\includegraphics[width=0.95\columnwidth]{./images/exp_varg_figure.pdf}
+\caption{\small{Variance of gradient estimation using kernel-$\eps$ and SL for different values of $S\in\{5,50\}$ and fixed $\eps = 0.37$ (the same used in the other results).  For kernel-$\eps$, $\varv(\thetav_{\text{MAP}}) = 6.7 \pm 131.5$ and $\varv(\thetav_{\text{MAP}}) = 6.9 \pm 18.9$ (for $S=5$ and $S=50$, respectively).  For SL,$\varv(\thetav_{\text{MAP}}) = 6.35 \pm 42.4$ and $\varv(\thetav_{\text{MAP}}) = 0.62 \pm 5.2$ (for $S=5$ and $S=50$, respectively).  The ``true'' ABC gradient at $\thetav_{\text{MAP}}$ is $0.26$.  The ``true'' ABC loglikelihood is based on a Gaussian approximation (smoothed by $\eps$), with mean and variance set by moment matching with the true Gamma distribution (the sum of $N$ exponentials). Not only does kernel-$\eps$ keep a high variance for even large $S$, it seems to have a bias in its gradient estimate.  [look into this?] }}
+\label{fig:exp-varg}
+\end{center}
+\vskip -0.2in
+\end{figure}
+
 \subsection{Sticky Random Numbers}
 An obvious use of common random numbers, as previously demonstrated for SPSA \cite{kleinman1999simulation}, is within the gradient approximation so that the noise from the simulator has less of an influence that $\dtheta$.  In addition to this use, we have found that using the same random seeds over multiple time-steps improves the performance of HABC (TBD).  This is very similar to using dependent random streams to drive MCMC \cite{Murray2012,Neal2012}, the main difference we believe is that we are using the Hamiltonian dynamics to drive proposal in $\thetav$ and using $\omegav$ to give persistent simulations, reducing the variance from the unknown simulator noise function.
 
 Our updates for $\omegav$ are simple.  At each time step $t$, each seed is refreshed to a new random value with probability $\gamma$, i.e. $\omega_s \leftarrow \omega_s$ with probability $\gamma$, and $\omega_s \leftarrow \mathcal{U}(1,W)$, where $W=10^8$ in our algorithms.  By observing the simulation at different $\thetav$ but using same seeds, we can eliminate much of the simulator noise from the Markov chain.  By treating $\omegav$ as part of the state of the Markov chain, we can smoothly move along noiseless outputs for several iterations and then propose new seeds.  Though proposing new seeds produces a valid Metropolis-Hastings algorithm (keeping $\thetav$ fixed and changing $\omegav$), we found that using {\em sticky} random seeds works well.  These seeds can be precomputed before the chain is run and can be seen as apart from the state of the Markov chain.  [CONFUSING]
 
 %[We may want anti-thetic instead of CRNs, ie overrelax versus underrelax, etc.]
-
 \begin{figure}[t]
 \vskip 0.2in
 \begin{center}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf}
-%\includegraphics[width=0.45\columnwidth]{./images/exp-ABC-MCMC-posterior_hist.pdf}
-%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
-%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior_hist.pdf}
-%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
-\caption{\small{Using sticky numbers at rate $1\%$}}
-\label{fig:exp-posteriors}
-\end{center}
-\vskip -0.2in
-\end{figure} 
+\includegraphics[width=0.32\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-HMC-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.32\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.32\columnwidth]{./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf}
 
-\begin{figure}[t]
-\vskip 0.2in
-\begin{center}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-HMC-posterior-hist-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.32\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf}
+%\includegraphics[width=0.45\columnwidth]{./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.32\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf}
+\includegraphics[width=0.32\columnwidth]{./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf}
+
 %\includegraphics[width=0.45\columnwidth]{./images/exp-ABC-MCMC-posterior_hist.pdf}
 %\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
 %\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior_hist.pdf}
@@ -381,6 +371,25 @@ Our updates for $\omegav$ are simple.  At each time step $t$, each seed is refre
 \end{center}
 \vskip -0.2in
 \end{figure} 
+%
+% \begin{figure}[t]
+% \vskip 0.2in
+% \begin{center}
+% \includegraphics[width=0.45\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-0p01-chain0.pdf}
+% \includegraphics[width=0.45\columnwidth]{./images/exp-SG-HMC-posterior-hist-omega-rate-0p01-chain0.pdf}
+% \includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-0p01-chain0.pdf}
+% \includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior-hist-omega-rate-0p01-chain0.pdf}
+% %\includegraphics[width=0.45\columnwidth]{./images/exp-ABC-MCMC-posterior_hist.pdf}
+% %\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
+% %\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior_hist.pdf}
+% %\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
+% \caption{\small{Using sticky numbers at rate $1\%$}}
+% \label{fig:exp-posteriors}
+% \end{center}
+% \vskip -0.2in
+% \end{figure}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Demonstration}\label{sec:demo}
@@ -392,30 +401,35 @@ We use a simple $D=1$ problem to demonstrate HABC.  Let $y= \frac{1}{N} \sum_{i}
 \setlength{\linewidth}{\textwidth}
 \setlength{\hsize}{\textwidth}
 \begin{center}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SG-HMC-theta-timeseries-omega-rate-0p01-chain0.pdf}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf}
-\caption{\small{Using sticky numbers at rate $1\%$}}
-\label{fig:exp-theta-traces}
-\end{center}
-\vskip -0.2in
-\end{figure*} 
-
-\begin{figure*}[t]
-%\vskip 0.2in
-\setlength{\linewidth}{\textwidth}
-\setlength{\hsize}{\textwidth}
-\begin{center}
 \includegraphics[width=0.95\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.95\columnwidth]{./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf}
+%\includegraphics[width=0.95\columnwidth]{./images/exp-SG-HMC-theta-timeseries-omega-rate-100p0-chain0.pdf}
 \includegraphics[width=0.95\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf}
 \includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf}
-\caption{\small{No sticky numbers}}
+\includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf}
+\caption{\small{No sticky numbers  Explanation thermostats: with no sticky, need to lower eta, so it shows smoother trajectory.  With sticky, the gradients are more consistent, allowing for a larger eta and therfore more noise injection.}}
 \label{fig:exp-theta-traces}
 \end{center}
 \vskip -0.2in
-\end{figure*} 
+\end{figure*}
+
+% \begin{figure*}[t]
+% %\vskip 0.2in
+% \setlength{\linewidth}{\textwidth}
+% \setlength{\hsize}{\textwidth}
+% \begin{center}
+% \includegraphics[width=0.95\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-0p01-chain0.pdf}
+% %\includegraphics[width=0.95\columnwidth]{./images/exp-SG-HMC-theta-timeseries-omega-rate-0p01-chain0.pdf}
+% \includegraphics[width=0.95\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-0p01-chain0.pdf}
+% \includegraphics[width=0.95\columnwidth]{./images/exp-SG-Thermostats-theta-timeseries-omega-rate-0p01-chain0.pdf}
+% \caption{\small{Using sticky numbers at rate $1\%$}}
+% \label{fig:exp-theta-traces}
+% \end{center}
+% \vskip -0.2in
+% \end{figure*}
+
+ 
 
 
 
