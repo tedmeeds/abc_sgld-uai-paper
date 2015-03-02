@@ -5,7 +5,7 @@
 		\STATE $\gradvest \leftarrow \zerov$
     % \REPEAT
 			\FOR{$r = 1 : R$}
-        \STATE $\Deltav \sim \text{Bernouilli}\lp 1/2, |\thetav| \rp$ 
+        \STATE $\Deltav \sim 2 \cdot \text{Bernouilli}\lp 1/2, |\thetav| \rp$ - 1
         \FOR{$s = 1 : |\omegav|$}
           \STATE $\x^{(s)}_{+} \leftarrow f\lp \thetav + \dtheta \Deltav, \omega_s \rp$
           \STATE $\x^{(s)}_{-} \leftarrow f\lp \thetav - \dtheta \Deltav, \omega_s \rp$

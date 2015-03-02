@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -61,6 +61,13 @@ Kleinman, Nathan~L, Spall, James~C, and Naiman, Daniel~Q.
   common random numbers.
 \newblock \emph{Management Science}, 45\penalty0 (11):\penalty0 1570--1578,
   1999.
+
+\bibitem[Leimkuhler \& Reich(2009)Leimkuhler and
+  Reich]{leimkuhler2009metropolis}
+Leimkuhler, Benedict and Reich, Sebastian.
+\newblock A metropolis adjusted nos{\'e}-hoover thermostat.
+\newblock \emph{ESAIM: Mathematical Modelling and Numerical Analysis},
+  43\penalty0 (04):\penalty0 743--755, 2009.
 
 \bibitem[Marin et~al.(2012)Marin, Pudlo, Robert, and Ryder]{marin:2012}
 Marin, J.-M., Pudlo, P., Robert, C.P., and Ryder, R.J.
