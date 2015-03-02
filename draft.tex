@@ -429,35 +429,50 @@ At $\theta_{\text{MAP}}$ we estimated the gradient $\nabla \hat{U}(\theta)$ usin
 \subsection{Posterior Inference using HABC}
 In Figures~\ref{fig:exp-theta-traces} we show the posterior trace plots for ABC-MCMC, SGLD, SGHMC, and SGNHT versions of HABC using SL gradient estimates ($S=5$).  The behavior of the trajectories is quite different, though they all produce the same correct posterior estimates (Figure~\ref{fig:exp-posteriors}).  In Table~\ref{tab:exp-posteriors-nosticky} we report the {\em total variational distance} between the true posterior and the ABC posteriors after different numbers of samples (repeated 5 times).
 
+% \begin{table}[h]
+% \caption{Posterior inference for Exponential problem}
+% \label{tab:exp-prob-no-sticky}
+% \begin{center}
+% \begin{tabular}{l||c|c|c|c|c}
+% {\bf Algo}  & 100 & 1000 & 10K & 50K \\
+% \hline \\
+% SL-MCMC &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+% SGLD    &  $0.42$ & $0.22$ & $0.14$ & $0.045$ \\
+% SGHMC   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+% SGNHT   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+% \end{tabular}
+% \end{center}
+% \end{table}
+
 \begin{table}[h]
 \caption{Posterior inference for Exponential problem}
-\label{tab:exp-prob-no-sticky}
+\label{tab:exp-posterior}
 \begin{center}
-\begin{tabular}{l||c|c|c|c|c}
-{\bf Algo}  & 100 & 1000 & 10K & 50K \\
-\hline \\
-SL-MCMC &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
-SGLD    &  $0.42$ & $0.22$ & $0.14$ & $0.045$ \\
-SGHMC   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
-SGNHT   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+\begin{tabular}{|l||c|c|c|c|c}
+  \hline 
+Algo & $1000$ & $10000$ & $50000$ \\ \hline \hline 
+SL-ABC & $0.099$ & $0.047$ & $0.045$ \\
+SGLD & $0.082$ & $0.049$ & $0.048$ \\
+SGNHT & $0.271$ & $0.162$ & $0.161$ \\
+SGNHT* & $0.144$ & $0.056$ & $0.075$ \\ \hline 
 \end{tabular}
 \end{center}
 \end{table}
 
-\begin{table}[h]
-\caption{Posterior inference for Exponential problem}
-\label{tab:exp-prob-no-sticky}
-\begin{center}
-\begin{tabular}{l||c|c|c|c|c}
-{\bf Algo}  & 100 & 1000 & 10K & 50K \\
-\hline \\
-SL-MCMC &  $0.23$ & $0.12$ & $0.053$ & $0.044$ \\
-SGLD    &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
-SGHMC   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
-SGNHT   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
-\end{tabular}
-\end{center}
-\end{table}
+% \begin{table}[h]
+% \caption{Posterior inference for Exponential problem}
+% \label{tab:exp-prob-no-sticky}
+% \begin{center}
+% \begin{tabular}{l||c|c|c|c|c}
+% {\bf Algo}  & 100 & 1000 & 10K & 50K \\
+% \hline \\
+% SL-MCMC &  $0.23$ & $0.12$ & $0.053$ & $0.044$ \\
+% SGLD    &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+% SGHMC   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+% SGNHT   &  $0.26$ & $0.099$ & $0.047$ & $0.045$ \\
+% \end{tabular}
+% \end{center}
+% \end{table}
 
 % DIR: exp-eta-0p005-dtheta-0p01-C10-S5-omega-0p01
 % SL-MCMC omega_rate 100%
