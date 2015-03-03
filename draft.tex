@@ -345,7 +345,9 @@ Variations of SPSA include {\em one-sided} SPSA \cite{spall2000adaptive} (we use
 \vskip 0.2in
 \begin{center}
 \includegraphics[width=0.95\columnwidth]{./images/exp_varg_figure.pdf}
-\caption{\small{Variance of gradient estimation using kernel-$\eps$ and SL for different values of $S\in\{5,50\}$ and fixed $\eps = 0.37$ (the same used in the other results).  For kernel-$\eps$, $\varv(\thetav_{\text{MAP}}) = 6.7 \pm 131.5$ and $\varv(\thetav_{\text{MAP}}) = 6.9 \pm 18.9$ (for $S=5$ and $S=50$, respectively).  For SL,$\varv(\thetav_{\text{MAP}}) = 6.35 \pm 42.4$ and $\varv(\thetav_{\text{MAP}}) = 0.62 \pm 5.2$ (for $S=5$ and $S=50$, respectively).  The ``true'' ABC gradient at $\thetav_{\text{MAP}}$ is $0.26$.  The ``true'' ABC loglikelihood is based on a Gaussian approximation (smoothed by $\eps$), with mean and variance set by moment matching with the true Gamma distribution (the sum of $N$ exponentials). Not only does kernel-$\eps$ keep a high variance for even large $S$, it seems to have a bias in its gradient estimate.  [THIS IS AT POSTERIOR MEAN, SO NO BIAS FOR SL, BUT FOR KEPS.  REPLACE with AT MAP -- THIS IS DONE] }}
+\caption{\small{Variance of gradient estimation using kernel-$\eps$ and SL for different values of $S\in\{5,50\}$ and fixed $\eps = 0.37$ (the same used in the other results).  
+%
+When $S=5$, the empirical estimates of  $\nabla \hat{U}(\thetav_{\text{MAP}})$ are $-12 \pm 147$ (kernel-$\eps$) and $-9.3 \pm 43$ (SL).  When $S=50$ they are $-0.80 \pm 19$ (kernel-$\eps$) and $-7.3 \pm 4.9$ (SL).  Note the large discrepancy in variance.  Note the limit of $S \rightarrow \infty$,   $\nabla \hat{U}(\thetav_{\text{MAP}}) = -7.8$.  The bias if SL gradients is due to its Gaussian approximation (smoothed by $\eps$) of $\pi(\x|\thetav)$, which is a heavy-tailed Gamma distribution (the sum of $N$ exponentials).}}
 \label{fig:exp-varg}
 \end{center}
 \vskip -0.2in
