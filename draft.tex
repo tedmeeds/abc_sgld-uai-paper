@@ -159,7 +159,7 @@ Consider the Bayesian inference task of either drawing samples from or learning 
 \begin{equation}
   \pi(\thetav | \y_1, \ldots, \y_N ) \propto \pi(\thetav) \pi( \y_1, \ldots, \y_N  | \thetav )
 \end{equation}
-where $\pi(\thetav)$ is a prior distribution over parameters $\thetav \in {\rm I\!R}^{D}$ and $\pi( \y_1, \ldots, \y_N  | \thetav )$ is the likelihood of $N$ data observations, where $\y_i \in {\rm I\!R}^J$.  In ABC, the vector of $J$ observations are typically informative statistics of the raw observations.  It can be shown that if the statistics used in the likelihood function are sufficient, then these algorithms sample correctly from an approximation to the true posterior.  
+where $\pi(\thetav)$ is a prior distribution over parameters $\thetav \in {\rm I\!R}^{D}$ and $\pi( \y_1, \ldots, \y_N  | \thetav )$ is the likelihood of $N$ data observations, where $\y_i \in {\rm I\!R}^J$.  In ABC, the vector of $J$ observations are typically informative statistics of the raw observations.  It can be shown that if the statistics used in the likelihood function are sufficient, then these algorithms sample correctly from an approximation to the true posterior \cite{marin:2012}.  
   The simulator is treated as generator of random pseudo-observations, i.e. $\x \simsim \pi( \x | \thetav )$ is a draw from the simulator.  Discrepancies between the simulator outputs $\x$ and the observations $\y$ are scaled by a closeness parameter $\eps$ and treated as likelihoods.  This is the equivalent to putting an $\eps$-kernel around the observations, and using a Monte Carlo estimate of the likelihood using $S$ draws of $\x$: 
 \begin{equation}
   \pi_{\epsvec}( \y | \thetav ) =  \int \pi_{\epsvec}(\y | \x ) \pi( \x | \thetav ) d\x 
@@ -195,17 +195,17 @@ An alternative approach to computing the ABC likelihood is to estimate the param
                           & = & \mathcal{N}( \y | \mu_{\thetav}, \sigma^2_{\thetav} + \epsvec^2 )
 \end{eqnarray}
 
-Of particular concern to this paper is the behavior of the log-likelihoods for different values of $\epsilon$.  In the $\eps$-kernel case, the log-likelihood is very sensitive to small values of $\eps$:
+Of particular concern to this paper is the behavior of the log-likelihoods for different values of $\epsvec$.  In the $\epsvec$-kernel case, the log-likelihood is very sensitive to small values of $\epsvec$:
 \begin{eqnarray}
   \log \pi_{\epsvec}( \y | \thetav ) & = & \log \sum_s \mathcal{N}( \y | \x^{(s)}, \epsvec^2 ) \\
                           & = & \log \mathcal{N}( \y | \x^{(s)}, \epsvec^2 ) + \log\lp 1 + H \rp \\
                           & \approx & -\log \epsvec -\frac{1}{2 \epsvec^2} ( \y - \x^{(m)} )^2 
 \end{eqnarray}
-where $m$ is the simulation that is closest to $\y$, $H$ is a sum over terms close to $0$. We can see that the log-likelihood can be set arbitrarily small by decreasing $\eps$.  On the other hand, by using a model of the simulation at $\thetav$
+where $m$ is the simulation that is closest to $\y$, $H$ is a sum over terms close to $0$. We can see that the log-likelihood can be set arbitrarily small by decreasing $\epsvec$.  On the other hand, by using a model of the simulation at $\thetav$
 \begin{eqnarray}
  \log \pi_{\epsvec}( \y | \thetav ) & \approx & -\frac{1}{2} \log (\sigma^2_{\thetav} + \epsvec^2 ) -\frac{( \y - \mu_{\thetav} )^2 }{2 (\sigma^2_{\thetav} + \epsvec^2 )} 
 \end{eqnarray}
- For the SL model, $\epsvec$ acts as a smoothing term and can be set to small values with little change to the log-likelihood, as long as the SL estimators are fit appropriately.  This insensitivity to $\eps$ will be used in Section~\ref{sec:habc} for estimating gradients of the ABC likelihood.  Before describing HABC in full detail however, we now explain how scaling Hamiltonian dynamics in Bayesian learning can be accomplished using stochastic gradients from batched data.
+ For the SL model, $\epsvec$ acts as a smoothing term and can be set to small values with little change to the log-likelihood, as long as the SL estimators are fit appropriately.  This insensitivity to $\epsvec$ will be used in Section~\ref{sec:habc} for estimating gradients of the ABC likelihood.  Before describing HABC in full detail however, we now explain how scaling Hamiltonian dynamics in Bayesian learning can be accomplished using stochastic gradients from batched data.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SCALING BAYESIAN INFERENCE USING HAMILTONIAN DYNAMICS} \label{sec:scaling}
@@ -299,7 +299,7 @@ In the second line we have assumed $\epsvec$ is very small and $m$ is the index 
  \frac{1}{4\dtheta \epsvec^2} \lp ( \y - f( \thetav-\dtheta, \omega_m^-) )^2 -( \y - f( \thetav + \dtheta, \omega_m^+) )^2 \rp
 \end{equation}
 
-On the other hand, the synthetic-likelihood is stable; using a deterministic representation, 
+On the other hand, the synthetic-likelihood is stable; using a deterministic representation, we have 
 \begin{equation}
 \mu_{\thetav} = \frac{1}{S} \sum_s f( \thetav, \omega_s ) ~~~~~~~~~~~~~ \sigma^s_{\thetav} = \frac{1}{S-1} \sum_s ( \mu_{\thetav} - f( \thetav, \omega_s ) )^2
 \end{equation}
@@ -735,7 +735,7 @@ We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr} shows sam
 \section{DISCUSSION AND CONCLUSION} \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{-0.1in}
-Hamiltonian ABC proposes a new set of algorithms for Bayesian inference of likelihood-free models.  HABC builds  upon the connections between Hamilton Monte Carlo with stochastic gradients and well-established gradient approximations based on a minimal number of forward simulations, even in high-dimensions.  We have performed some preliminary experiments showing the feasibility of running ABC on both small and large problems, and we hope that the door has been opened for exploration of larger simulation-based models using HABC. 
+Hamiltonian ABC proposes a new set of algorithms for Bayesian inference of likelihood-free models.  HABC builds  upon the connections between Hamiltonian Monte Carlo with stochastic gradients and well-established gradient approximations based on a minimal number of forward simulations, even in high-dimensions.  We have performed some preliminary experiments showing the feasibility of running ABC on both small and large problems, and we hope that the door has been opened for exploration of larger simulation-based models using HABC. 
 
 Another innovation we introduce is the use of persistent random seeds to suppress the simulator noise and therefore smooth the simulation landscape over a local region of parameter space. For some algorithms run on certain models, improved performance has been observed.  This is most likely to be the case for simulators with large additive noise and algorithms that benefit from long Hamiltonian trajectories (i.e. SGHMC and SG-Thermostats).  We feel that new classes of ABC algorithms could develop from using persistent random seeds, not just gradient-based samplers but traditional ABC-MCMC.
  
