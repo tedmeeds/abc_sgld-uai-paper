@@ -100,7 +100,7 @@
 % \input{abstract}
 % \end{abstract} 
 \begin{abstract} 
-  Approximate Bayesian computation (ABC) is a powerful and elegant framework for performing inference in simulation-based models.  However, due to the difficulty in scaling likelihood estimates, ABC remains useful for relatively low-dimensional problems. We introduce Hamiltonian ABC (HABC), a set of likelihood-free algorithms that apply recent advances in scaling Bayesian learning using Hamiltonian Monte Carlo (HMC) and stochastic gradients.     We find that a small number forward simulations can effectively approximate the ABC gradient, allowing Hamiltonian dynamics to efficiently traverse parameter spaces.  We also describe a new simple yet general approach of incorporating random seeds into the state of the Markov chain, further reducing the random walk behavior of HABC.  We demonstrate HABC on several typical ABC problems, and show that HABC performs comparably to regular Bayesian inference on a high-dimensional problem from machine learning.
+  Approximate Bayesian computation (ABC) is a powerful and elegant framework for performing inference in simulation-based models.  However, due to the difficulty in scaling likelihood estimates, ABC remains useful for relatively low-dimensional problems. We introduce Hamiltonian ABC (HABC), a set of likelihood-free algorithms that apply recent advances in scaling Bayesian learning using Hamiltonian Monte Carlo (HMC) and stochastic gradients.     We find that a small number forward simulations can effectively approximate the ABC gradient, allowing Hamiltonian dynamics to efficiently traverse parameter spaces.  We also describe a new simple yet general approach of incorporating random seeds into the state of the Markov chain, further reducing the random walk behavior of HABC.  We demonstrate HABC on several typical ABC problems, and show that HABC samples comparably to regular Bayesian inference using true gradients on a high-dimensional problem from machine learning.
   %
   %
   % Models in simulation-based science domains are considered likelihood-free (LF) since they are not defined by a probabilistic model, but by a simulator that maps parameters to pseudo-observations.  To perform parameter inference in the models, a powerful set of statistical procedures called Approximate Bayesian Computation (ABC) can be applied.  Although there is a wide variety of ABC algorithms, they are dominated by SMC/PMC and MCMC.  These have been successful, but their inefficiency of producing samples from the approximate posterior has limited ABC to simulations with relatively few parameters.  Hamiltonian Monte Carlo (HMC)  provides a framework for extending ABC to high-dimensions, but requires computing the gradient of the log-likelihood.  With Hamiltonian ABC, we show how recent advances of stochastic gradient HMC algorithms applied to the big data domain can be also used for efficient sampling for LF models.  We find that a small number forward simulations can effectively approximate the true ABC gradient, allowing Hamiltonian dynamics to efficiently traverse parameter spaces.   We demonstrate HABC on several typical ABC problems, and show that HABC performs comparably to regular Bayesian inference on a high-dimensional problem from machine learning.
@@ -699,13 +699,16 @@ Though not shown due to space limitations, we have found that persistent seeds c
 \subsection{Bayesian Logistic Regression}\label{sec:auto}
 We perform Bayesian inference on Bayesian inference on a logistic regression model using the digits $0$ and $1$ from MNIST.  Despite its simplicity, the model still represents a high-dimensional problem for HABC ($D=1568$).  We first run stochastic gradient descent to find $\thetav_{\text{MAP}}$ using the true gradient.  We then run HABC SGLD and SG-Thermostats starting  $\thetav_{\text{MAP}}$ to discover how well the algorithms explore the posterior.  We compare with SGLD and SG-Thermostats using the {\em true} gradients.   
 %
-We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr} shows samples projected onto 2 dimensions using random projections.  We can clearly see that the trajectories using SPSA exhibit very similar behavior to Bayesian learning with the true gradients.  This is very positive result that indicates HABC can successfully exploit the noisy and less informative gradients of SPSA.
+We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr} shows samples randomly projected onto 2 dimensions ($1000$ evenly sub-sampled from $10K$).  We can clearly see that the trajectories using SPSA exhibit very similar behavior to Bayesian learning with the true gradients.  This is very positive result that indicates HABC can successfully exploit the noisy and less informative gradients of SPSA.
 \begin{figure}[t]
 %\vskip 0.2in
 \begin{center}
-\includegraphics[width=0.95\columnwidth]{./images/lr/random_proj.png}
+%\includegraphics[width=0.95\columnwidth]{./images/lr/random_proj.png}
+\includegraphics[width=0.9\columnwidth]{./images/lr/lr_trajectories.pdf}
 \vspace{-0.15in}
-\caption{\small{Bayesian logistic regression sampling trajectories randomly projected.  {\bf White circle:} $\thetav_{\text{MAP}}$}; {\bf Dark blue:} true SGLD; {\bf Red:} SPSA SGLD; {\bf Green:} true SG-Thermostats; {\bf Cyan:} SPSA SG-Thermostats.}
+\caption{\small{Bayesian logistic regression sampling trajectories randomly projected.  The yellow circle is the projected $\thetav_{\text{MAP}}$.}  
+%{\bf White circle:} $\thetav_{\text{MAP}}$}; {\bf Dark blue:} true SGLD; {\bf Red:} SPSA SGLD; {\bf %Green:} true SG-Thermostats; {\bf Cyan:} SPSA SG-Thermostats.
+}
 \label{fig:blr}
 \end{center}
 \vskip -0.2in
