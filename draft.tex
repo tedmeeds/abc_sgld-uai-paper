@@ -697,9 +697,9 @@ Though not shown due to space limitations, we have found that persistent seeds c
 
 \vspace{-0.1in}
 \subsection{Bayesian Logistic Regression}\label{sec:auto}
-We perform Bayesian inference on Bayesian inference on a logistic regression model using the digits $0$ and $1$ from MNIST.  Despite its simplicity, the model still represents a high-dimensional problem for HABC ($D=1568$).  We first run stochastic gradient descent to find $\thetav_{\text{MAP}}$ using the true gradient.  We then run HABC SGLD and SG-Thermostats starting  $\thetav_{\text{MAP}}$ to discover how well the algorithms explore the posterior.  We compare with SGLD and SG-Thermostats using the {\em true} gradients.  
-
-We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr} shows samples projected onto 2 dimensions using random projections.  We can clearly see that the trajectories using SPSA exhibit very similar behavior to Bayesian learning with the true gradients.  
+We perform Bayesian inference on Bayesian inference on a logistic regression model using the digits $0$ and $1$ from MNIST.  Despite its simplicity, the model still represents a high-dimensional problem for HABC ($D=1568$).  We first run stochastic gradient descent to find $\thetav_{\text{MAP}}$ using the true gradient.  We then run HABC SGLD and SG-Thermostats starting  $\thetav_{\text{MAP}}$ to discover how well the algorithms explore the posterior.  We compare with SGLD and SG-Thermostats using the {\em true} gradients.   
+%
+We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr} shows samples projected onto 2 dimensions using random projections.  We can clearly see that the trajectories using SPSA exhibit very similar behavior to Bayesian learning with the true gradients.  This is very positive result that indicates HABC can successfully exploit the noisy and less informative gradients of SPSA.
 \begin{figure}[t]
 %\vskip 0.2in
 \begin{center}
@@ -731,6 +731,7 @@ We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr} shows sam
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{DISCUSSION AND CONCLUSION} \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-0.1in}
 Hamiltonian ABC proposes a new set of algorithms for Bayesian inference of likelihood-free models.  HABC builds  upon the connections between Hamilton Monte Carlo with stochastic gradients and well-established gradient approximations based on a minimal number of forward simulations, even in high-dimensions.  We have performed some preliminary experiments showing the feasibility of running ABC on both small and large problems, and we hope that the door has been opened for exploration of larger simulation-based models using HABC. 
 
 Another innovation we introduce is the use of persistent random seeds to suppress the simulator noise and therefore smooth the simulation landscape over a local region of parameter space. For some algorithms run on certain models, improved performance has been observed.  This is most likely to be the case for simulators with large additive noise and algorithms that benefit from long Hamiltonian trajectories (i.e. SGHMC and SG-Thermostats).  We feel that new classes of ABC algorithms could develop from using persistent random seeds, not just gradient-based samplers but traditional ABC-MCMC.
@@ -744,7 +745,7 @@ There are several unresolved and open questions regarding the application of sto
 %   \item Unbiased gradients with low noise.  SL bias might be intolerable; use KDE to get stable unbiased gradients?
 % \end{itemize}
 
-Expensive simulators are an important class of models that we do not address in this work.  However, previous work in Bayesian inference has shown the usefulness of HMC-based proposals based on Gaussian process of log-likelihood surfaces \cite{rasmussen:2003}.   We could similarly use HABC with recent ABC surrogate models \cite{Meeds2014GpsUai,wilkinson:2014} to avoid simulations whenever possible, yet still  benefit from Hamiltonian dynamics.  
+Expensive simulators are an important class of models that we do not address in this work.  However, previous work in Bayesian inference has shown the usefulness of HMC-based proposals based on Gaussian process of log-likelihood surfaces \cite{rasmussen:2003}.   We could similarly use HABC with  ABC surrogate models \cite{Meeds2014GpsUai,wilkinson:2014} to minimize simulation calls, yet still  benefit from Hamiltonian dynamics.  
 %We address this scenario in Section~\ref{future}.  
 %Shown for relatively fast simulators.  Extensions to surrogates with GPS (Meeds2014GpsUai, rasmussen:2003, wilkinson:2014) can use derivative of GP for likelihood as GP of gradient.  These could be matched by occasional gradient estimates (Osborne).
 
