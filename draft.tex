@@ -334,23 +334,25 @@ Variations of SPSA include {\em one-sided} SPSA \cite{spall2000adaptive} (we use
 \begin{figure}[t]
 \vskip 0.2in
 \begin{center}
-\includegraphics[width=0.95\columnwidth]{./images/exp_crn_figure.pdf}
+\includegraphics[width=0.75\columnwidth]{./images/exp_crn_figure.pdf}
+\vspace{-0.1in}
 \caption{\small{A view of a simulator in terms of common random numbers.  The horizontal line represents $\y$ and red shading $\pm 2\eps$.  The shaded curved region represents $2\sigma$ of $\pi(\x|\thetav)$.  The dashed lines are $f(\thetav, \omega_s)$ for several values of $\omega$.  The blue circles are potential random samples from $\pi(\x|\thetav)$.  For a fixed value $\omega_s$, the simulator produces deterministic outputs that change smoothly, even though the simulator itself is quite noisy.}}
 \label{fig:exp-crns}
 \end{center}
-\vskip -0.2in
+\vspace{-0.2in}
 \end{figure} 
 
 \begin{figure}[t]
 \vskip 0.2in
 \begin{center}
-\includegraphics[width=0.95\columnwidth]{./images/exp_varg_figure.pdf}
+\includegraphics[width=0.75\columnwidth]{./images/exp_varg_figure.pdf}
+\vspace{-0.1in}
 \caption{\small{Variance of gradient estimation using kernel-$\eps$ and SL for different values of $S\in\{5,50\}$ and fixed $\eps = 0.37$ (the same used in the other results).  
 %
 When $S=5$, the empirical estimates of  $\nabla \hat{U}(\thetav_{\text{MAP}})$ are $-12 \pm 147$ (kernel-$\eps$) and $-9.3 \pm 43$ (SL).  When $S=50$ they are $-0.80 \pm 19$ (kernel-$\eps$) and $-7.3 \pm 4.9$ (SL).  Note the large discrepancy in variance.  Note the limit of $S \rightarrow \infty$,   $\nabla \hat{U}(\thetav_{\text{MAP}}) = -7.8$.  The bias if SL gradients is due to its Gaussian approximation (smoothed by $\eps$) of $\pi(\x|\thetav)$, which is a heavy-tailed Gamma distribution (the sum of $N$ exponentials).}}
 \label{fig:exp-varg}
 \end{center}
-\vskip -0.2in
+\vspace{-0.2in}
 \end{figure}
 
 \subsection{Common and Sticky Random Numbers}
@@ -383,14 +385,14 @@ In pseudo-marginal ABC-MCMC one could propose $q(\x^{'(s)} | \thetav)$ (fixing $
 \begin{figure}[t]
 \vskip 0.2in
 \begin{center}
-\includegraphics[width=0.32\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.32\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.32\columnwidth]{./images/exponential/exp3-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.27\columnwidth]{./images/exp-SL-MCMC-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.27\columnwidth]{./images/exp-SG-Langevin-posterior-hist-omega-rate-100p0-chain0.pdf}
+\includegraphics[width=0.27\columnwidth]{./images/exponential/exp3-SG-Thermostats-posterior-hist-omega-rate-100p0-chain0.pdf}
 
-\includegraphics[width=0.32\columnwidth]{./images/exponential/exp2-SL-MCMC-posterior-hist-omega-rate-0p1-chain1.pdf}
-\includegraphics[width=0.32\columnwidth]{./images/exponential/exp2-SG-Langevin-posterior-hist-omega-rate-0p1-chain0.pdf}
-\includegraphics[width=0.32\columnwidth]{./images/exponential/exp2-SG-Thermostats-posterior-hist-omega-rate-0p1-chain1.pdf}
-
+\includegraphics[width=0.27\columnwidth]{./images/exponential/exp2-SL-MCMC-posterior-hist-omega-rate-0p1-chain1.pdf}
+\includegraphics[width=0.27\columnwidth]{./images/exponential/exp2-SG-Langevin-posterior-hist-omega-rate-0p1-chain0.pdf}
+\includegraphics[width=0.27\columnwidth]{./images/exponential/exp2-SG-Thermostats-posterior-hist-omega-rate-0p1-chain1.pdf}
+\vspace{-0.1in}
 %\includegraphics[width=0.45\columnwidth]{./images/exp-ABC-MCMC-posterior_hist.pdf}
 %\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Thermostats-posterior_hist.pdf}
 %\includegraphics[width=0.45\columnwidth]{./images/exp-SG-Langevin-posterior_hist.pdf}
@@ -398,7 +400,7 @@ In pseudo-marginal ABC-MCMC one could propose $q(\x^{'(s)} | \thetav)$ (fixing $
 \caption{\small{Posterior distributions for the demonstration problem.  {\bf Top row:} No persistent seeds.  {\bf Bottom row:} Persistent seeds with $\gamma=0.1$.  Histograms of the posterior estimates are overlaid with the true posterior (dashed line).  All algorithms (except for SG-Thermostats for non-persistent $\omegav$) give roughly the same posterior estimate.  By adding persistent $\omegav$ SG-Thermostats achieved similar posteriors to the other algorithms.}}
 \label{fig:exp-posteriors}
 \end{center}
-\vskip -0.2in
+\vspace{-0.1in}
 \end{figure} 
 %
 % \begin{figure}[t]
@@ -424,9 +426,6 @@ In pseudo-marginal ABC-MCMC one could propose $q(\x^{'(s)} | \thetav)$ (fixing $
 \section{Demonstration}\label{sec:demo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We use a simple $D=1$ problem to demonstrate HABC.  Let $y= \frac{1}{N} \sum_{i} e_i$, where $e_i \sim \text{Exp}(1/\thetastar)$; $\thetastar = 0.15$, $N=20$, and $y=7.74$ in our concrete example.  Assuming $\pi(\theta ) = \text{Gamma}(\alpha, \beta)$, the true posterior is a gamma distribution with shape $\alpha+N$ and rate $\beta + N y$.  Our simulator therefore generates the average of $N$ exponential random variates with rate $\lambda = 1/\theta$.  Data $x \simsim \pi(x|\theta)$ are shown in Figure~\ref{fig:exp-crns}.  We have explicitly shown the smoothness of the simulator by generating data along trajectories of fixed seeds $\omega_s$; i.e. for several $\omega_s$ we vary $\theta$ (dashed lines are function $f(\theta, \omega_s)$) and randomly reveal simulation data (blue circles).  The horizontal line with shading indicates $y \pm 2 \eps$, where $\eps = 0.37$ is used throughout the demonstration.
-
-
-
 % \begin{figure*}[t]
 % %\vskip 0.2in
 % \setlength{\linewidth}{\textwidth}
@@ -441,12 +440,10 @@ We use a simple $D=1$ problem to demonstrate HABC.  Let $y= \frac{1}{N} \sum_{i}
 % \end{center}
 % \vskip -0.2in
 % \end{figure*}
-
- 
-
-
+\vspace{-0.2in}
 
 \subsection{Bias and Variance of $\nabla \hat{U}(\thetav)$}
+\vspace{-0.1in}
 To test our assumption that the synthetic-likelihood model is better suited for HABC, we ran FDSA at the true $\theta_{\text{MAP}}$.  Using $S=5$ and $S=50$ and fixing $\eps = 0.37$, we gather $10K$ gradients samples using kernel-$\epsvec$ and SL likelihoods.  These gradient estimate densities are shown in Figure~\ref{fig:exp-varg}.  An unbiased estimate of the gradient should be centered at $0$.  There are two important results.  First, the SL estimates have a small bias, even at $S=50$.  This is because it is estimating the true Gamma distribution of $\pi(\x|\thetav)$ with a Gaussian.  We can analytically estimate this bias as $S \rightarrow \infty$; for this example it is $-7.8$ which is what SL estimates are centered around ($-9.3$ for $S=5$ and $7.3$ for $S=50$).  The kernel-$\epsvec$ likelihood, on the other hand, exhibits low bias at $S=50$.  However, the second important result is the variances.  SL variances decrease quickly with $S$: $\sigma^2 = 43^2 \rightarrow 4.9^2$, whereas kernel-$\epsvec$ starts very high and remains high: $\sigma^2 = 147^2 \rightarrow 19^2$.  It is for this reason that we have chosen to use SL likelihoods for our gradient estimates, despite their small bias. As mentioned in Section~\ref{sec:habc-grads} it is possible that other likelihood models, such as KDE, might provide low bias and low variance gradient estimates.  We leave this for future work.
 %
 %
@@ -465,12 +462,13 @@ To test our assumption that the synthetic-likelihood model is better suited for 
 \includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SL-MCMC-theta-timeseries-omega-rate-0p1-chain3.pdf}
 \includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Langevin-theta-timeseries-omega-rate-0p1-chain3.pdf}
 \includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Thermostats-theta-timeseries-omega-rate-0p1-chain3.pdf}
+\vspace{-0.15in}
 \caption{\small{Trajectories of the last $1000$ $\thetav$ samples for the demonstration problem.  {\bf Top row:} Non-persistent random seeds.  {\bf Bottom row:} Persistent random seeds with $\gamma = 0.1$.  Each algorithm's parameters were optimized to minimize the total variational distance.  With persistent seeds, each algorithm's random walk behavior is suppressed.  Without persistent seeds, the optimal step-size $\eta$ for SG-Thermostats is small, resulting in an under-dispersed estimate of the posterior; when the seeds are persistent, the gradients are more consistent, and the optimal step-size is larger and therefore there is larger injected noise.  The resulting posteriors are shown in Figure~\ref{fig:exp-posteriors}.
 %For SG-Thermostats, persistent $\omegav$ allows for larger $\eta$.Sticky  Explanation thermostats: with no %sticky, need to lower eta, so it shows smoother trajectory.  With sticky, the gradients are more consistent, %allowing for a larger eta and therefore more noise injection.
 }}
 \label{fig:exp-theta-traces}
 \end{center}
-\vskip -0.2in
+\vspace{-0.1in}
 \end{figure*}
 
 \subsection{Posterior Inference using HABC}
@@ -495,7 +493,10 @@ In Figure~\ref{fig:exp-theta-traces} we show the trace plots of the last $1000$ 
 % \end{table}
 
 \begin{table}[h]
-\caption{Average total variational distance (tvd) for the demonstration problem.  {\em Non-persistent} used no persistent random seeds, whereas {\em Persistent} randomly proposes a new $\omega_s$ with $\gamma=0.1$. Each algorithms' parameters were optimized for minimal tvd after $10K$ samples.  The results for SGHMC (not shown) and SGNHT are nearly identical.  All algorithms tend to benefit from persistent seeds, in particular SGHMC and SGNHT, the methods with long Hamiltonian trajectories.}
+  \vspace{-0.1in}
+\caption{Average total variational distance (tvd) for the demonstration problem.  {\em Non-persistent} used no persistent random seeds, whereas {\em Persistent} randomly proposes a new $\omega_s$ with $\gamma=0.1$. Each algorithms' parameters were optimized for minimal tvd after $10K$ samples.  The results for SGHMC (not shown) and SGNHT are nearly identical.  
+%All algorithms tend to benefit from persistent seeds, in particular SGHMC and SGNHT, the methods with long Hamiltonian trajectories.
+}
 \label{tab:exp-posterior}
 \begin{center}
 \begin{tabular}{l|c|c||c|c|}
@@ -515,6 +516,7 @@ In Figure~\ref{fig:exp-theta-traces} we show the trace plots of the last $1000$ 
 \end{tabular}
 \end{center}
 \end{table}
+\vspace{-0.2in}
 % \begin{table}[h]
 % \caption{Posterior inference for Exponential problem}
 % \label{tab:exp-prob-no-sticky}
@@ -632,6 +634,7 @@ Though not shown due to space limitations, we have found that persistent seeds c
     \includegraphics[width=0.65\columnwidth]{./images/blowfly/non-sticky-theta-1d-SL-MCMC.pdf}
     \includegraphics[width=0.65\columnwidth]{./images/blowfly/non-sticky-theta-1d-SG-Langevin.pdf}
     \includegraphics[width=0.65\columnwidth]{./images/blowfly/non-sticky-theta-1d-SG-Thermo.pdf}
+   \vspace{-0.1in}
    \caption{\small{Blowfly posterior distributions (non-persistent seeds).  {\bf Top row}:  Posteriors for three parameters for SL-MCMC (left set of three), SGLD (middle), and SG-Thermostats (right).  {\bf Bottom row:} Last trajectories of the last 1000 samples for two parameters for the same algorithms.
   }}
   \label{fig:bf-results}
@@ -685,21 +688,24 @@ Though not shown due to space limitations, we have found that persistent seeds c
 %\includegraphics[width=0.35\columnwidth]{./images/blowfly/sticky-theta-2d-SG-Langevin.pdf}
 \includegraphics[width=0.75\columnwidth]{./images/blowfly/non-sticky-theta-2d-SG-Thermo.pdf}
 %\includegraphics[width=0.35\columnwidth]{./images/blowfly/sticky-theta-2d-SG-Thermo.pdf}
+\vspace{-0.15in}
 \caption{\small{Blowfly trajectories of two parameters over the last 1000 time-steps.  {\bf Top:} SGLD and {\bf Bottom}: SG-Thermostats.  Relative to SL-MCMC (not shown), the Hamiltonian dynamics clearly show persistent $\thetav$ trajectories.}}
 \label{fig:bf-two-d-theta}
 \end{center}
-\vskip -0.2in
+\vspace{-0.1in}
 \end{figure}
 
+\vspace{-0.1in}
 \subsection{Bayesian Logistic Regression}\label{sec:auto}
-We perform Bayesian inference on Bayesian inference on a logistic regression model using the digits $0$ and $1$ from MNIST.  Despite its simplicity, the model still represents a high-dimensional problem for HABC ($D=1568$).  We first run stochastic gradient descent to find $\thetav_{\text{MAP}}$ using the true gradient.  We then run HABC SGLD and SG-Thermostats  starting  $\thetav_{\text{MAP}}$ to discover how well the algorithms explore the posterior.  We compare with SGLD and SG-Thermostats using the {\em true} gradients.  
+We perform Bayesian inference on Bayesian inference on a logistic regression model using the digits $0$ and $1$ from MNIST.  Despite its simplicity, the model still represents a high-dimensional problem for HABC ($D=1568$).  We first run stochastic gradient descent to find $\thetav_{\text{MAP}}$ using the true gradient.  We then run HABC SGLD and SG-Thermostats starting  $\thetav_{\text{MAP}}$ to discover how well the algorithms explore the posterior.  We compare with SGLD and SG-Thermostats using the {\em true} gradients.  
 
-We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr}
+We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr} shows samples projected onto 2 dimensions using random projections.  We can clearly see that the trajectories using SPSA exhibit very similar behavior to Bayesian learning with the true gradients.  
 \begin{figure}[t]
 %\vskip 0.2in
 \begin{center}
-\includegraphics[width=0.75\columnwidth]{./images/blowfly/non-sticky-theta-2d-SG-Thermo.pdf}
-\caption{\small{Bayesian logistic regression.}}
+\includegraphics[width=0.95\columnwidth]{./images/lr/random_proj.png}
+\vspace{-0.15in}
+\caption{\small{Bayesian logistic regression sampling trajectories randomly projected.  {\bf White circle:} $\thetav_{\text{MAP}}$}; {\bf Dark blue:} true SGLD; {\bf Red:} SPSA SGLD; {\bf Green:} true SG-Thermostats; {\bf Cyan:} SPSA SG-Thermostats.}
 \label{fig:blr}
 \end{center}
 \vskip -0.2in
@@ -725,7 +731,7 @@ We use $n=100$ mini-batches and $R=10$ for SPSA.  Figure~\ref{fig:blr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{DISCUSSION AND CONCLUSION} \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Hamiltonian ABC proposes a new set of algorithms for Bayesian inference of likelihood-free models.  HABC builds  upon the connections between Hamilton Monte Carlo with stochastic gradients and well-established gradient approximations based on a minimal number of forward simulations, even in high-dimensions.  By showing the feasibility of running ABC on both small and large problems, we hope that the door has been opened for exploration of larger simulation-based models. 
+Hamiltonian ABC proposes a new set of algorithms for Bayesian inference of likelihood-free models.  HABC builds  upon the connections between Hamilton Monte Carlo with stochastic gradients and well-established gradient approximations based on a minimal number of forward simulations, even in high-dimensions.  We have performed some preliminary experiments showing the feasibility of running ABC on both small and large problems, and we hope that the door has been opened for exploration of larger simulation-based models using HABC. 
 
 Another innovation we introduce is the use of persistent random seeds to suppress the simulator noise and therefore smooth the simulation landscape over a local region of parameter space. For some algorithms run on certain models, improved performance has been observed.  This is most likely to be the case for simulators with large additive noise and algorithms that benefit from long Hamiltonian trajectories (i.e. SGHMC and SG-Thermostats).  We feel that new classes of ABC algorithms could develop from using persistent random seeds, not just gradient-based samplers but traditional ABC-MCMC.
  
