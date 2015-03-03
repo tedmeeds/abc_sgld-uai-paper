@@ -602,7 +602,7 @@ results: convergence of training error (batches), convergence in test error usin
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{DISCUSSION} \label{sec:discussion}
+%\section{DISCUSSION} \label{sec:discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{itemize}
@@ -613,15 +613,22 @@ results: convergence of training error (batches), convergence in test error usin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSION} \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Hamiltonian ABC proposes a new set of algorithms for Bayesian inference of likelihood-free models.  HABC builds  upon the connections between Hamilton Monte Carlo with stochastic gradients and well-established gradient approximations based on a minimal number of forward simulations, even for high-dimensional parameter spaces.  By showing the feasibility of running ABC in high-dimensions, we hope that the door has been opened for exploration of larger simulation-based models. 
 
-\begin{itemize}
-  \item New set of ABC algorithms for efficient exploration of posterior distribution.
-  \item Key: opens the door to high-dimensional ABC inference.
-  \item [Test for more accurate gradients] For ABC, the gradients we compute are stochastic because we must approximate $\pi(\x | \thetav)$ with forward simulations.  We can make the approximation arbitrarily good by running more simulations, but this is often unnecessary for sampling, because we can make use of the uncertainty in our current approximation to decide if our sample is correct or not (cite UAI2014?). 
-  \item Unbiased gradients with low noise.  SL bias might be intolerable; use KDE to get stable unbiased gradients?
-\end{itemize}
+Another innovation we introduce is the use of sticky or persistent random seeds to suppress the simulator noise and therefore smooth the simulation landscape over a local region of parameter space.  By doing this, all our methods, but especially SGHMC and SGNHT, with their longer Hamiltonian trajectories, benefit from this smoothness that changes slowly over time.  We feel that new classes of ABC algorithms could develop from using persistent random seeds, not solely gradient-based samplers.
+ 
+There are several unresolved and open questions regarding the application of stochastic gradients to ABC.  The first issue is the importance of the bias-variance relationship for different ABC likelihood models.    We found that using gradients based on the synthetic-likelihood greatly reduced their variance, but introduced a small bias, because of its Gaussian assumption.  
 
-A further complication, which we do not address on this paper, is the forward simulation might be, and for many interesting problems is, expensive.  We would therefore prefer to resort to some sort of surrogate modeling \cite{Meeds2014GpsUai,wilkinson:2014} to avoid simulations whenever possible. We address this scenario in Section~\ref{future}.  Shown for relatively fast simulators.  Extensions to surrogates with GPS (Meeds2014GpsUai, rasmussen:2003, wilkinson:2014) can use derivative of GP for likelihood as GP of gradient.  These could be matched by occasional gradient estimates (Osborne).
+% \begin{itemize}
+%   \item New set of ABC algorithms for efficient exploration of posterior distribution.
+%   \item Key: opens the door to high-dimensional ABC inference.
+%   \item [Test for more accurate gradients] For ABC, the gradients we compute are stochastic because we must approximate $\pi(\x | \thetav)$ with forward simulations.  We can make the approximation arbitrarily good by running more simulations, but this is often unnecessary for sampling, because we can make use of the uncertainty in our current approximation to decide if our sample is correct or not (cite UAI2014?).
+%   \item Unbiased gradients with low noise.  SL bias might be intolerable; use KDE to get stable unbiased gradients?
+% \end{itemize}
+
+Expensive simulators are an important class of models that we do not address in this work.  However, previous work in Bayesian inference has shown the usefulness of HMC-based proposals based on Gaussian process of log-likelihood surfaces \cite{rasmussen:2003}.   We could similarly use HABC with recent ABC surrogate models \cite{Meeds2014GpsUai,wilkinson:2014} to avoid simulations whenever possible, yet benefit from Hamiltonian dynamics.  
+%We address this scenario in Section~\ref{future}.  
+%Shown for relatively fast simulators.  Extensions to surrogates with GPS (Meeds2014GpsUai, rasmussen:2003, wilkinson:2014) can use derivative of GP for likelihood as GP of gradient.  These could be matched by occasional gradient estimates (Osborne).
 
 %\subsubsection*{References}
 %{

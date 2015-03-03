@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 MAR 2015 21:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  3 MAR 2015 09:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -548,17 +548,6 @@ LaTeX Warning: Reference `' on page 8 undefined on input line 590.
 
 LaTeX Warning: Reference `' on page 8 undefined on input line 590.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 618.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 618.
-
-
-LaTeX Warning: Reference `future' on page 8 undefined on input line 624.
-
 
 Overfull \vbox (6.81989pt too high) has occurred while \output is active []
 
@@ -590,12 +579,12 @@ Underfull \hbox (badness 1275) in paragraph at lines 67--71
  []
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 114--117
+Underfull \hbox (badness 1796) in paragraph at lines 120--123
 []\OT1/ptm/m/n/10 Sisson, Scott A and Fan, Yanan.  Likelihood-
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 114--117
+Underfull \hbox (badness 1184) in paragraph at lines 120--123
 \OT1/ptm/m/n/10 free markov chain monte carlo.  \OT1/ptm/m/it/10 Arxiv preprint
 
  []
@@ -616,10 +605,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3251 strings out of 493488
- 46058 string characters out of 3141326
- 117790 words of memory out of 3000000
- 6468 multiletter control sequences out of 15000+200000
+ 3235 strings out of 493488
+ 45798 string characters out of 3141326
+ 117811 words of memory out of 3000000
+ 6455 multiletter control sequences out of 15000+200000
  25924 words of font info for 59 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,9n,28p,1295b,529s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -651,7 +640,7 @@ type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on draft.pdf (10 pages, 637510 bytes).
+Output written on draft.pdf (10 pages, 637632 bytes).
 PDF statistics:
  373 PDF objects out of 1000 (max. 8388607)
  307 compressed objects within 4 object streams
