@@ -7,6 +7,7 @@
 
 % For figures
 \usepackage{graphicx} % more modern
+\usepackage{tikz}
 %\usepackage{epsfig} % less modern
 %\usepackage{subcaption} 
 %usepackage[numers]{natbib}
@@ -53,7 +54,7 @@
 
 % Leave date blank
 \date{}
-
+\pagenumbering{gobble}
 \pagestyle{myheadings}
 %\usepackage{sidecap}
 %\usepackage[export]{adjustbox}
@@ -455,13 +456,36 @@ To test our assumption that the synthetic-likelihood model is better suited for 
 %\vskip 0.2in
 \setlength{\linewidth}{\textwidth}
 \setlength{\hsize}{\textwidth}
-\begin{center}  
-\includegraphics[width=0.65\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.65\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.65\columnwidth]{./images/exponential/exp3-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf}
-\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SL-MCMC-theta-timeseries-omega-rate-0p1-chain3.pdf}
-\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Langevin-theta-timeseries-omega-rate-0p1-chain3.pdf}
-\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Thermostats-theta-timeseries-omega-rate-0p1-chain3.pdf}
+\begin{center}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\columnwidth]{./images/exp-SL-MCMC-theta-timeseries-omega-rate-100p0-chain0.pdf}};
+    \node[draw, fill=white] at (4.37, 1.95) {\small SL-MCMC};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf}};
+    \node[draw, fill=white] at (4.25, 1.93) {\small SG-Langevin};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\columnwidth]{./images/exponential/exp3-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf}};
+    \node[draw, fill=white] at (4.06, 1.95) {\small SG-Thermostats};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SL-MCMC-theta-timeseries-omega-rate-0p1-chain3.pdf}};
+    \node[draw, fill=white] at (4.37, 1.95) {\small SL-MCMC};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Langevin-theta-timeseries-omega-rate-0p1-chain3.pdf}};
+    \node[draw, fill=white] at (4.25, 1.93) {\small SG-Langevin};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Thermostats-theta-timeseries-omega-rate-0p1-chain3.pdf}};
+    \node[draw, fill=white] at (4.06, 1.95) {\small SG-Thermostats};
+\end{tikzpicture}
+%\includegraphics[width=0.65\columnwidth]{./images/exp-SG-Langevin-theta-timeseries-omega-rate-100p0-chain0.pdf}
+%\includegraphics[width=0.65\columnwidth]{./images/exponential/exp3-SG-Thermostats-theta-timeseries-omega-rate-100p0-chain0.pdf}
+%\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SL-MCMC-theta-timeseries-omega-rate-0p1-chain3.pdf}
+%\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Langevin-theta-timeseries-omega-rate-0p1-chain3.pdf}
+%\includegraphics[width=0.65\columnwidth]{./images/exponential/exp2-SG-Thermostats-theta-timeseries-omega-rate-0p1-chain3.pdf}
 \vspace{-0.15in}
 \caption{\small{Trajectories of the last $1000$ $\thetav$ samples for the demonstration problem.  {\bf Top row:} Non-persistent random seeds.  {\bf Bottom row:} Persistent random seeds with $\gamma = 0.1$.  Each algorithm's parameters were optimized to minimize the total variational distance.  With persistent seeds, each algorithm's random walk behavior is suppressed.  Without persistent seeds, the optimal step-size $\eta$ for SG-Thermostats is small, resulting in an under-dispersed estimate of the posterior; when the seeds are persistent, the gradients are more consistent, and the optimal step-size is larger and therefore there is larger injected noise.  The resulting posteriors are shown in Figure~\ref{fig:exp-posteriors}.
 %For SG-Thermostats, persistent $\omegav$ allows for larger $\eta$.Sticky  Explanation thermostats: with no %sticky, need to lower eta, so it shows smoother trajectory.  With sticky, the gradients are more consistent, %allowing for a larger eta and therefore more noise injection.
