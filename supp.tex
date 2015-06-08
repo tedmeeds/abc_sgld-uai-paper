@@ -1,3 +1,23 @@
+\documentclass[]{article}
+\usepackage{proceed2e}
+
+% Set the typeface to Times Roman
+\usepackage{times}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage[numbers]{natbib}
+%\usepackage{array}
+%\usepackage{nips_style} 
+%\usepackage{sidecap}
+%\usepackage[export]{adjustbox}
+%\include{cdefs}
+
+% For algorithms
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\include{cdefs}
+\begin{document}
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{STOCHASTIC-GRADIENT LD} \label{sgld}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,52 +126,52 @@ TODO:
   \item Variance check for increasing $q$ can also be used to stop optimization since the variance is less than the noise in the gradients.
 \end{itemize}
 
-% \subsection{SGD, AdaGrad, RMSProp, AdaM}
-  
-% \begin{itemize}
-%   \item  Arguably the two most useful procedures in simulation-based science are optimization and Bayesian inference.
-%   \item  Optimization can take the form of simple grid-search to sophisticated techniques like factorial design \cite{factorialdesign}, Bayesian experiment design \cite{bayesexpdesign}, (mention others).
-%   \item Recently, Bayesian optimization techniques have shown success in optimizing very expensive black-box simulators \cite{bosuccess}.
-%   \item Though gradients are not directly computable for simulators, they can be computed analytically by using finite differences (see \cite{kiefer1952}).  This quickly becomes infeasible for large $p$ problems.  There is however an alternative stochastic approximation algorithm by Spall \cite{spall1999} that requires only 2 simulation calls independent of $p$.
-%   \item By using this approximation, gradient-based algorithms can be adopted for simulators: for optimization, using analogous stochastic gradient descent algorithms and for Bayesian inference using Langevin dynamics \cite{langevin}.
-% \end{itemize}
-%
-% With our stochastic gradient in hand, we can make use of robust stochastic gradient rules, including recent advances from machine learning.
-%
-% \subsubsection{SGD}
-% The basic update rule is at time $t$ for minimization is
-% \begin{eqnarray}
-%   \Delta\thetav & = & - \alpha_t \hat{g_t}
-% \end{eqnarray}
-% with conditions $\sum_{t=1}^{\infty} \alpha_t = \infty$ and $\sum_{t=1}^{\infty} \alpha_t^2 < \infty$ required for convergence.
-% An additional momentum parameter $\beta_1$ can be added to improve convergence
-% \begin{eqnarray}
-%   \gmom & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
-%   \Delta\thetav & = & - \alpha_t \gmom
-% \end{eqnarray}
-%
-% \subsubsection{AdaGrad}
-% AdaGrad uses the total cumulative element-wise square of the gradients to automatically both decrease $\alpha_t$ and scale the learning rates for each dimension:
-% \begin{eqnarray}
-%   \gmom    & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
-%   \gsquare & = & \sum_{t'=1}^t \hat{g_t}^2 \\
-%   \Delta\thetav & = & - \alpha_t \gmom / \sqrt{\gsquare}
-% \end{eqnarray}
-%
-% \subsubsection{RMSProp}
-% \begin{eqnarray}
-%   \gmom    & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
-%   \gsquare & = & \beta_2 \gsquare + (1-\beta_2)*\hat{g_t}^2 \\
-%   \Delta\thetav & = & - \alpha_t \gmom / \sqrt{\gsquare}
-% \end{eqnarray}
-%
-% \subsubsection{AdaM}
-% \begin{eqnarray}
-%   \gmom    & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
-%   \gsquare & = & \beta_2 \gsquare + (1-\beta_2)*\hat{g_t}^2 \\
-%   \gamma & = & \frac{ \sqrt{1-(1-\beta_2)^t}}{(1-(1-\beta_1)^t)} \\
-%   \Delta\thetav & = & - \alpha_t \gamma \gmom / \sqrt{\gsquare}
-% \end{eqnarray}
+\subsection{SGD, AdaGrad, RMSProp, AdaM}
+
+\begin{itemize}
+  \item  Arguably the two most useful procedures in simulation-based science are optimization and Bayesian inference.
+  \item  Optimization can take the form of simple grid-search to sophisticated techniques like factorial design \cite{factorialdesign}, Bayesian experiment design \cite{bayesexpdesign}, (mention others).
+  \item Recently, Bayesian optimization techniques have shown success in optimizing very expensive black-box simulators \cite{bosuccess}.
+  \item Though gradients are not directly computable for simulators, they can be computed analytically by using finite differences (see \cite{kiefer1952}).  This quickly becomes infeasible for large $p$ problems.  There is however an alternative stochastic approximation algorithm by Spall \cite{spall1999} that requires only 2 simulation calls independent of $p$.
+  \item By using this approximation, gradient-based algorithms can be adopted for simulators: for optimization, using analogous stochastic gradient descent algorithms and for Bayesian inference using Langevin dynamics \cite{langevin}.
+\end{itemize}
+
+With our stochastic gradient in hand, we can make use of robust stochastic gradient rules, including recent advances from machine learning.
+
+\subsubsection{SGD}
+The basic update rule is at time $t$ for minimization is
+\begin{eqnarray}
+  \Delta\thetav & = & - \alpha_t \hat{g_t}
+\end{eqnarray}
+with conditions $\sum_{t=1}^{\infty} \alpha_t = \infty$ and $\sum_{t=1}^{\infty} \alpha_t^2 < \infty$ required for convergence.
+An additional momentum parameter $\beta_1$ can be added to improve convergence
+\begin{eqnarray}
+  \gmom & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
+  \Delta\thetav & = & - \alpha_t \gmom
+\end{eqnarray}
+
+\subsubsection{AdaGrad}
+AdaGrad uses the total cumulative element-wise square of the gradients to automatically both decrease $\alpha_t$ and scale the learning rates for each dimension:
+\begin{eqnarray}
+  \gmom    & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
+  \gsquare & = & \sum_{t'=1}^t \hat{g_t}^2 \\
+  \Delta\thetav & = & - \alpha_t \gmom / \sqrt{\gsquare}
+\end{eqnarray}
+
+\subsubsection{RMSProp}
+\begin{eqnarray}
+  \gmom    & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
+  \gsquare & = & \beta_2 \gsquare + (1-\beta_2)*\hat{g_t}^2 \\
+  \Delta\thetav & = & - \alpha_t \gmom / \sqrt{\gsquare}
+\end{eqnarray}
+
+\subsubsection{AdaM}
+\begin{eqnarray}
+  \gmom    & = & \beta_1 \gmom + (1-\beta_1)*\hat{g_t} \\
+  \gsquare & = & \beta_2 \gsquare + (1-\beta_2)*\hat{g_t}^2 \\
+  \gamma & = & \frac{ \sqrt{1-(1-\beta_2)^t}}{(1-(1-\beta_1)^t)} \\
+  \Delta\thetav & = & - \alpha_t \gamma \gmom / \sqrt{\gsquare}
+\end{eqnarray}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,3 +204,5 @@ TODO:
 % \subsection{Likelihood-free Inference of Blowfly Dynamics}
 
 % \subsection{Other Useful ABC problem}
+
+\end{document}
