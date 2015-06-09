@@ -1,9 +1,16 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alquier et~al.(2014)Alquier, Friel, Everitt, and
+  Boland]{alquier2014noisy}
+Alquier, Pierre, Friel, Nial, Everitt, Richard, and Boland, Aidan.
+\newblock {Noisy Monte Carlo: Convergence of Markov chains with approximate
+  transition kernels}.
+\newblock \emph{Statistics and Computing}, pp.\  1--19, 2014.
 
 \bibitem[Andrieu \& Roberts(2009)Andrieu and Roberts]{andrieu2009pseudo}
 Andrieu, C. and Roberts, G.
@@ -17,6 +24,12 @@ Andrieu, C. and Roberts, G.
 Beaumont, Mark~A, Zhang, Wenyang, and Balding, David~J.
 \newblock {Approximate Bayesian computation in population genetics}.
 \newblock \emph{Genetics}, 162\penalty0 (4):\penalty0 2025--2035, 2002.
+
+\bibitem[Betancourt(2015)]{betancourt2015fundamental}
+Betancourt, MJ.
+\newblock {The Fundamental Incompatibility of Hamiltonian Monte Carlo and Data
+  Subsampling}.
+\newblock \emph{Journal of Machine Learning Research}, 37, 2015.
 
 \bibitem[Chen et~al.(2014)Chen, Fox, and Guestrin]{chen2014stochastic}
 Chen, Tianqi, Fox, Emily~B, and Guestrin, Carlos.
@@ -43,11 +56,6 @@ Ehrlich, Elena, Jasra, Ajay, and Kantas, Nikolas.
   Intractable Likelihoods}.
 \newblock \emph{Methodology and Computing in Applied Probability}, pp.\  1--35,
   2013.
-
-\bibitem[Fan et~al.(2013)Fan, Nott, and Sisson]{fan:2013}
-Fan, Yanan, Nott, David~J, and Sisson, Scott~A.
-\newblock {Approximate Bayesian computation via regression density estimation}.
-\newblock \emph{Stat}, 2013.
 
 \bibitem[Kiefer et~al.(1952)Kiefer, Wolfowitz, et~al.]{kiefer1952stochastic}
 Kiefer, Jack, Wolfowitz, Jacob, et~al.
@@ -111,11 +119,11 @@ Rasmussen, C.E.
   bayesian integrals.
 \newblock \emph{Bayesian Statistics}, 7:\penalty0 651--659, 2003.
 
-\bibitem[Sisson et~al.(2007)Sisson, Fan, and Tanaka]{sisson2007sequential}
-Sisson, SA, Fan, Y, and Tanaka, Mark~M.
-\newblock {Sequential monte carlo without likelihoods}.
-\newblock \emph{Proceedings of the National Academy of Sciences}, 104\penalty0
-  (6):\penalty0 1760, 2007.
+\bibitem[Roberts \& Tweedie(1996)Roberts and Tweedie]{roberts1996exponential}
+Roberts, Gareth~O and Tweedie, Richard~L.
+\newblock {Exponential convergence of Langevin distributions and their discrete
+  approximations}.
+\newblock \emph{Bernoulli}, pp.\  341--363, 1996.
 
 \bibitem[Sisson \& Fan(2010)Sisson and Fan]{sisson:2010}
 Sisson, Scott~A and Fan, Yanan.

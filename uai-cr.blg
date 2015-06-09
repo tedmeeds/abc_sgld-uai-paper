@@ -4,45 +4,45 @@ The top-level auxiliary file: uai-cr.aux
 The style file: icml2014.bst
 Database file #1: abcsgld.bib
 Warning--empty journal in chen2014stochastic
-You've used 27 entries,
+You've used 28 entries,
             2773 wiz_defined-function locations,
-            764 strings with 9330 characters,
-and the built_in function-call counts, 12135 in all, are:
-= -- 1102
-> -- 620
-< -- 19
-+ -- 213
-- -- 186
-* -- 965
-:= -- 1854
-add.period$ -- 81
-call.type$ -- 27
-change.case$ -- 142
-chr.to.int$ -- 27
-cite$ -- 55
-duplicate$ -- 573
-empty$ -- 1041
-format.name$ -- 227
-if$ -- 2542
+            769 strings with 9580 characters,
+and the built_in function-call counts, 12685 in all, are:
+= -- 1164
+> -- 630
+< -- 23
++ -- 217
+- -- 189
+* -- 986
+:= -- 1925
+add.period$ -- 84
+call.type$ -- 28
+change.case$ -- 146
+chr.to.int$ -- 28
+cite$ -- 57
+duplicate$ -- 606
+empty$ -- 1088
+format.name$ -- 233
+if$ -- 2674
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 27
-newline$ -- 143
-num.names$ -- 108
-pop$ -- 260
+missing$ -- 28
+newline$ -- 148
+num.names$ -- 112
+pop$ -- 268
 preamble$ -- 1
-purify$ -- 115
+purify$ -- 118
 quote$ -- 0
-skip$ -- 438
+skip$ -- 472
 stack$ -- 0
-substring$ -- 545
-swap$ -- 53
-text.length$ -- 3
+substring$ -- 586
+swap$ -- 68
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 297
+type$ -- 308
 warning$ -- 1
-while$ -- 118
+while$ -- 126
 width$ -- 0
-write$ -- 350
+write$ -- 364
 (There was 1 warning)
